@@ -18,7 +18,7 @@ searchButton.addEventListener("click", function () {
     var parsedResults = searchResults[searchResults.length-1];
     searchPropagate.textContent = parsedResults;
     searchContent.appendChild(searchPropagate);
-
+    localStorage.setItem("search-history", parsedResults);
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=96b0eafea01d741545d3918386fdb490&units=imperial`, {
     })
         .then(response => response.json())

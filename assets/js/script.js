@@ -37,7 +37,8 @@ searchButton.addEventListener("click", function () {
                     uvIndex.textContent = data.current.uvi,
                     windSpeed.textContent = `${data.current.wind_speed} MPH`
                     var dateForecast = document.querySelectorAll("date")
-                   for (i=0; i < 5; i++) {
+                    // attempted for loop after many iterations to try and get at least one piece of 5 day to render
+                    for (i=0; i < 5; i++) {
                        dateForecast.textContent = moment.unix(data.daily[i].dt).format("MM/DD/YYYY")
                 }
     });
